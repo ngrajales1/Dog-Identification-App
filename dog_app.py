@@ -319,7 +319,22 @@ def dog_detector(img_path):
 
 ### TODO: Test the performance of the dog_detector function
 ### on the images in human_files_short and dog_files_short.
+#Initialize counter variables
+human_face=0
+dog_face=0
 
+#For loops to count true values for human and dog faces
+for x in range(len(human_files_short)):
+    if dog_detector(human_files_short[x]) == True:
+        human_face+= 1
+
+for x in range(len(dog_files_short)):
+    if dog_detector(dog_files_short[x]) == True:
+        dog_face+= 1
+
+#Print the percentage of true values from the test
+print ("Human face percentage is:", human_face*100/100)
+print ("Dog face percentage is:", dog_face*100/100)
 
 # ---
 # <a id='step3'></a>
