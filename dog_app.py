@@ -661,7 +661,8 @@ model.add(Dense(133, activation='softmax'))
 
 
 ### TODO: Compile the model.
-
+model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+model.summary()
 
 # ### (IMPLEMENTATION) Train the Model
 #
