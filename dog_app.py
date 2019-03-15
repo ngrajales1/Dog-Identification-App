@@ -674,6 +674,14 @@ model.summary()
 
 
 ### TODO: Train the model.
+from kera.callbacks import ModelCheckpoint
+
+#setting checkpointing variable to save the model that has the best validation loss
+checkpointer = ModelCheckpoint(filepath='saved_models/weights.best.VGG19.hdf5', verbose=1,save_best_only=True)
+
+#Fitting the model
+model.fit(train_VGG19,train_targets,epochs=20, validation_data=(valid_VGG19, valid_targets),
+          callbacks=[checkpointer],verbose=1,shuffle=True)
 
 
 # ### (IMPLEMENTATION) Load the Model with the Best Validation Loss
