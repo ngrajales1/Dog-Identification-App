@@ -474,6 +474,7 @@ dog_breed_predictions = [np.argmax(model.predict(np.expand_dims(tensor, axis=0))
 test_accuracy = 100*np.sum(np.array(dog_breed_predictions)==np.argmax(test_targets, axis=1))/len(dog_breed_predictions)
 print('Test accuracy: %.4f%%' % test_accuracy)
 
+#First accuracy was 3.2297, need to improve
 
 # ---
 # <a id='step4'></a>
