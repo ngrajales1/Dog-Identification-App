@@ -700,7 +700,13 @@ model.load_weights('saved_models/weights.best.VGG19.hdf5')
 
 
 ### TODO: Calculate classification accuracy on the test dataset.
+VGG19_predictions= [np.argmax(model.predict(np.expand_dims(feature,axis=0)))
+                   for feature in test_VGG19]
 
+# report test accuracy
+test_accuracy = 100*np.sum(np.array(VGG19_predictions)==
+                           np.argmax(test_targets, axis=1))/len(VGG19_predictions)
+print('\nTest accuracy: %.4f%%' % test_accuracy)
 
 # ### (IMPLEMENTATION) Predict Dog Breed with the Model
 #
