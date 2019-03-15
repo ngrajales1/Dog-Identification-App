@@ -690,7 +690,7 @@ model.fit(train_VGG19,train_targets,epochs=20, validation_data=(valid_VGG19, val
 
 
 ### TODO: Load the model weights with the best validation loss.
-
+model.load_weights('saved_models/weights.best.VGG19.hdf5')
 
 # ### (IMPLEMENTATION) Test the Model
 #
