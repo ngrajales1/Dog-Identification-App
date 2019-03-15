@@ -609,7 +609,10 @@ def VGG16_predict_breed(img_path):
 
 
 ### TODO: Obtain bottleneck features from another pre-trained CNN.
-
+bottleneck_features = np.load('/data/bottleneck_features/DogVGG19{Data.npz')
+train_VGG19 = bottleneck_features['train']
+valid_VGG19 = bottleneck_features['valid']
+test_VGG19 = bottleneck_features['test']
 
 # ### (IMPLEMENTATION) Model Architecture
 #
