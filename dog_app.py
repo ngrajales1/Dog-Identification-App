@@ -440,7 +440,7 @@ from keras.callbacks import ModelCheckpoint
 
 ### TODO: specify the number of epochs that you would like to use to train the model.
 
-epochs = ...
+epochs = 5
 
 ### Do NOT modify the code below this line.
 
