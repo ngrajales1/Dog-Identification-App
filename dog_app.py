@@ -652,7 +652,7 @@ test_Xception = bottleneck_features['test']
 
 ### TODO: Define your architecture.
 model = Sequential()
-model.add(Flatten(input_shape=(7,7,512)))
+model.add(Flatten(input_shape=train_VGG19.shape[1:]))  #need to use last convolutional output of VGG-19
 model.add(Dense(133, activation='softmax'))
 
 # ### (IMPLEMENTATION) Compile the Model
