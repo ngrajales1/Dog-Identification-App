@@ -614,6 +614,27 @@ train_VGG19 = bottleneck_features['train']
 valid_VGG19 = bottleneck_features['valid']
 test_VGG19 = bottleneck_features['test']
 
+"""
+#ResNet-50
+bottleneck_features = np.load('/data/bottleneck_features/DogResnet50Data.npz')
+train_Resnet50 = bottleneck_features['train']
+valid_Resnet50 = bottleneck_features['valid']
+test_Resnet50 = bottleneck_features['test']
+
+#Inception
+bottleneck_features = np.load('/data/bottleneck_features/DogInceptionV3Data.npz')
+train_InceptionV3 = bottleneck_features['train']
+valid_InceptionV3 = bottleneck_features['valid']
+test_InceptionV3 = bottleneck_features['test']
+
+#Xception
+bottleneck_features = np.load('/data/bottleneck_features/DogXceptionData.npz')
+train_Xception = bottleneck_features['train']
+valid_Xception = bottleneck_features['valid']
+test_Xception = bottleneck_features['test']
+"""
+
+
 # ### (IMPLEMENTATION) Model Architecture
 #
 # Create a CNN to classify dog breed.  At the end of your code cell block, summarize the layers of your model by executing the line:
