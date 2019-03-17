@@ -753,7 +753,15 @@ print('\nTest accuracy: %.4f%%' % test_accuracy)
 
 ### TODO: Write your algorithm.
 ### Feel free to use as many code cells as needed.
-
+def dog_or_human(img_epath):
+    if face_detector(img_path)== True:
+        print("Hello Human, you look like a:")
+        return dog_breed_classifier(img_path)
+    elif dog_detector(img_path)== True:
+        print("Ruff Ruff, Ruff ruff ruff ruff:")
+        return dog_breed_classifier(img_path)
+    else:
+        print("There is an error with the image you provided")
 
 # ---
 # <a id='step7'></a>
