@@ -784,6 +784,12 @@ def dog_or_human(img_epath):
 ## at least 6 images on your computer.
 ## Feel free to use as many code cells as needed.
 
+print(dog_or_human('User_Images/dog_2.png'))
+print(dog_or_human('User_Images/IMG_0249.jpg'))
+print(dog_or_human('User_Images/IMG_0711.jpg'))
+print(dog_or_human('User_Images/IMG_1299.jpg'))
+print(dog_or_human('User_Images/IMG_1353.jpg'))
+print(dog_or_human('User_Images/IMG_5995.jpg'))
 
 # # Please download your notebook to submit
 #
