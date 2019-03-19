@@ -623,16 +623,16 @@ test_Resnet50 = bottleneck_features['test']
 
 """
 #Inception
-bottleneck_features = np.load('/data/bottleneck_features/DogInceptionV3Data.npz')
-train_InceptionV3 = bottleneck_features['train']
-valid_InceptionV3 = bottleneck_features['valid']
-test_InceptionV3 = bottleneck_features['test']
+#bottleneck_features = np.load('/data/bottleneck_features/DogInceptionV3Data.npz')
+#train_InceptionV3 = bottleneck_features['train']
+#valid_InceptionV3 = bottleneck_features['valid']
+#test_InceptionV3 = bottleneck_features['test']
 
 #Xception
-#bottleneck_features = np.load('/data/bottleneck_features/DogXceptionData.npz')
-#train_Xception = bottleneck_features['train']
-#valid_Xception = bottleneck_features['valid']
-#test_Xception = bottleneck_features['test']
+bottleneck_features = np.load('/data/bottleneck_features/DogXceptionData.npz')
+train_Xception = bottleneck_features['train']
+valid_Xception = bottleneck_features['valid']
+test_Xception = bottleneck_features['test']
 
 
 
