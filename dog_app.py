@@ -607,12 +607,12 @@ def VGG16_predict_breed(img_path):
 
 # In[ ]:
 
-
+"""
 ### TODO: Obtain bottleneck features from another pre-trained CNN.
-#bottleneck_features = np.load('/data/bottleneck_features/DogVGG19{Data.npz')
-#train_VGG19 = bottleneck_features['train']
-#valid_VGG19 = bottleneck_features['valid']
-#test_VGG19 = bottleneck_features['test']
+bottleneck_features = np.load('/data/bottleneck_features/DogVGG19{Data.npz')
+train_VGG19 = bottleneck_features['train']
+valid_VGG19 = bottleneck_features['valid']
+test_VGG19 = bottleneck_features['test']
 
 
 #ResNet-50
@@ -620,6 +620,7 @@ bottleneck_features = np.load('/data/bottleneck_features/DogResnet50Data.npz')
 train_Resnet50 = bottleneck_features['train']
 valid_Resnet50 = bottleneck_features['valid']
 test_Resnet50 = bottleneck_features['test']
+
 """
 #Inception
 bottleneck_features = np.load('/data/bottleneck_features/DogInceptionV3Data.npz')
@@ -628,11 +629,11 @@ valid_InceptionV3 = bottleneck_features['valid']
 test_InceptionV3 = bottleneck_features['test']
 
 #Xception
-bottleneck_features = np.load('/data/bottleneck_features/DogXceptionData.npz')
-train_Xception = bottleneck_features['train']
-valid_Xception = bottleneck_features['valid']
-test_Xception = bottleneck_features['test']
-"""
+#bottleneck_features = np.load('/data/bottleneck_features/DogXceptionData.npz')
+#train_Xception = bottleneck_features['train']
+#valid_Xception = bottleneck_features['valid']
+#test_Xception = bottleneck_features['test']
+
 
 
 # ### (IMPLEMENTATION) Model Architecture
