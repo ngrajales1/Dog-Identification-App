@@ -657,7 +657,7 @@ model = Sequential()
 model.add(GlobalAveragePooling2D(input_shape=train_InceptionV3.shape[1:]))
 model.add(Dense(133, activation='softmax'))
 
- 
+
 # ### (IMPLEMENTATION) Compile the Model
 
 # In[ ]:
