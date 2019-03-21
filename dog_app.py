@@ -616,16 +616,16 @@ def VGG16_predict_breed(img_path):
 #test_VGG19 = bottleneck_features['test']
 
 #ResNet-50
-bottleneck_features = np.load('/data/bottleneck_features/DogResnet50Data.npz')
-train_Resnet50 = bottleneck_features['train']
-valid_Resnet50 = bottleneck_features['valid']
-test_Resnet50 = bottleneck_features['test']
+#bottleneck_features = np.load('/data/bottleneck_features/DogResnet50Data.npz')
+#train_Resnet50 = bottleneck_features['train']
+#valid_Resnet50 = bottleneck_features['valid']
+#test_Resnet50 = bottleneck_features['test']
 
 #Inception
-#bottleneck_features = np.load('/data/bottleneck_features/DogInceptionV3Data.npz')
-#train_InceptionV3 = bottleneck_features['train']
-#valid_InceptionV3 = bottleneck_features['valid']
-#test_InceptionV3 = bottleneck_features['test']
+bottleneck_features = np.load('/data/bottleneck_features/DogInceptionV3Data.npz')
+train_InceptionV3 = bottleneck_features['train']
+valid_InceptionV3 = bottleneck_features['valid']
+test_InceptionV3 = bottleneck_features['test']
 
 #Xception
 #bottleneck_features = np.load('/data/bottleneck_features/DogXceptionData.npz')
@@ -654,7 +654,7 @@ test_Resnet50 = bottleneck_features['test']
 
 ### TODO: Define your architecture.
 model = Sequential()
-model.add(Flatten(input_shape=train_Resnet50.shape[1:]))
+model.add(Flatten(input_shape=train_InceptionV3.shape[1:]))
 model.add(Dense(133, activation='softmax'))
 
 
@@ -680,10 +680,10 @@ model.summary()
 from keras.callbacks import ModelCheckpoint
 
 #setting checkpointing variable to save the model that has the best validation loss
-checkpointer = ModelCheckpoint(filepath='saved_models/weights.best.Resnet50.hdf5', verbose=1,save_best_only=True)
+checkpointer = ModelCheckpoint(filepath='saved_models/weights.best.InceptionV3.hdf5', verbose=1,save_best_only=True)
 
 #Fitting the model
-model.fit(train_Resnet50,train_targets,epochs=20, validation_data=(valid_Resnet50, valid_targets),
+model.fit(train_InceptionV3,train_targets,epochs=20, validation_data=(valid_InceptionV3, valid_targets),
           callbacks=[checkpointer],verbose=1,shuffle=True)
 
 
@@ -693,7 +693,7 @@ model.fit(train_Resnet50,train_targets,epochs=20, validation_data=(valid_Resnet5
 
 
 ### TODO: Load the model weights with the best validation loss.
-model.load_weights('saved_models/weights.best.Resnet50.hdf5')
+model.load_weights('saved_models/weights.best.InceptionV3.hdf5')
 
 # ### (IMPLEMENTATION) Test the Model
 #
@@ -703,12 +703,12 @@ model.load_weights('saved_models/weights.best.Resnet50.hdf5')
 
 
 ### TODO: Calculate classification accuracy on the test dataset.
-Resnet50_predictions= [np.argmax(model.predict(np.expand_dims(feature,axis=0)))
-                   for feature in test_Resnet50]
+InceptionV3_predictions= [np.argmax(model.predict(np.expand_dims(feature,axis=0)))
+                   for feature in test_InceptionV3]
 
 # report test accuracy
-test_accuracy = 100*np.sum(np.array(Resnet50_predictions)==
-                           np.argmax(test_targets, axis=1))/len(Resnet50_predictions)
+test_accuracy = 100*np.sum(np.array(InceptionV3_predictions)==
+                           np.argmax(test_targets, axis=1))/len(InceptionV3_predictions)
 print('\nTest accuracy: %.4f%%' % test_accuracy)
 
 # ### (IMPLEMENTATION) Predict Dog Breed with the Model
