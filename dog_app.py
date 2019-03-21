@@ -654,7 +654,7 @@ test_Xception = bottleneck_features['test']
 
 ### TODO: Define your architecture.
 model = Sequential()
-model.add(Flatten(input_shape=train_InceptionV3.shape[1:]))
+model.add(GlobalAveragePooling2D(input_shape=train_InceptionV3.shape[1:]))
 model.add(Dense(133, activation='softmax'))
 
 
